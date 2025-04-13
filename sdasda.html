@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Motors - Luxury Automotive Excellence</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Global Styles */
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #f8f8f8;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #d4af37;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('ferrari-ferrari-f40-car-sunrise-supercar-hd-wallpaper-preview.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #d4af37;
+            color: #1a1a1a;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #c9a227;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Featured Cars Section */
+        .featured-cars {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: #d4af37;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: #777;
+            font-size: 18px;
+        }
+
+        .car-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .car-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .car-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .car-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .car-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .car-card:hover .car-image img {
+            transform: scale(1.1);
+        }
+
+        .car-details {
+            padding: 25px;
+        }
+
+        .car-details h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .car-specs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: #777;
+        }
+
+        .car-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .car-location {
+            display: flex;
+            align-items: center;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .car-location i {
+            margin-right: 8px;
+            color: #d4af37;
+        }
+
+        .car-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            padding: 8px 20px;
+        }
+
+        .btn-outline:hover {
+            background-color: #d4af37;
+            color: #1a1a1a;
+        }
+
+        /* Car Details Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 200;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 50px auto;
+            max-width: 900px;
+            border-radius: 8px;
+            overflow: hidden;
+            animation: modalFadeIn 0.5s;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-size: 24px;
+        }
+
+        .close-modal {
+            font-size: 28px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: #d4af37;
+        }
+
+        .modal-body {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-car-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .modal-car-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .modal-car-specs {
+            margin-bottom: 20px;
+        }
+
+        .modal-car-specs h4 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .spec-item i {
+            margin-right: 10px;
+            color: #d4af37;
+        }
+
+        .order-form {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .order-form h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .modal-footer {
+            padding: 20px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            font-size: 20px;
+            color: #1a1a1a;
+        }
+
+        .testimonial-role {
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .slider-dot.active {
+            background-color: #d4af37;
+        }
+
+        /* Dealership Locations */
+        .locations {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .location-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .location-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .location-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .location-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .location-details {
+            padding: 25px;
+        }
+
+        .location-details h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .location-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #777;
+        }
+
+        .location-info i {
+            margin-right: 10px;
+            color: #d4af37;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            padding: 60px 0;
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            background-color: #d4af37;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #c9a227;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #d4af37;
+        }
+
+        .footer-column p {
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #d4af37;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #d4af37;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .modal-car-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 20px;
+            }
+
+            nav ul li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+
+            .newsletter-form button {
+                border-radius: 4px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .car-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .car-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn, .btn-outline {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        .slide-up {
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c9a227;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Elite<span>Motors</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#featured">Featured Cars</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content slide-up">
+                <h1>Experience Automotive Excellence</h1>
+                <p>Discover the world's finest luxury vehicles at Elite Motors. Unparalleled quality, exceptional service, and a legacy of automotive passion.</p>
+                <a href="#featured" class="btn">Explore Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Cars Section -->
+    <section id="featured" class="featured-cars">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Luxury Vehicles</h2>
+                <p>Explore our curated selection of the world's most prestigious automobiles</p>
+            </div>
+            <div class="car-gallery">
+                <!-- Car 1 -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mercedes-Benz S-Class">
+                    </div>
+                    <div class="car-details">
+                        <h3>BMW M5</h3>
+                        <div class="car-specs">
+                            <span>2023 Model</span>
+                            <span>5,000 mi</span>
+                        </div>
+                        <div class="car-price">$115,900</div>
+                        <div class="car-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Elite Motors Beverly Hills</span>
+                        </div>
+                        <div class="car-actions">
+                            <button class="btn-outline view-details" data-car="1">Details</button>
+                            <button class="btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 2 -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="BMW 7 Series">
+                    </div>
+                    <div class="car-details">
+                        <h3>Camaro Zl1</h3>
+                        <div class="car-specs">
+                            <span>2023 Model</span>
+                            <span>3,200 mi</span>
+                        </div>
+                        <div class="car-price">$298,500</div>
+                        <div class="car-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Elite Motors Miami</span>
+                        </div>
+                        <div class="car-actions">
+                            <button class="btn-outline view-details" data-car="2">Details</button>
+                            <button class="btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 3 -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Audi A8">
+                    </div>
+                    <div class="car-details">
+                        <h3>Porsche 911</h3>
+                        <div class="car-specs">
+                            <span>2023 Model</span>
+                            <span>2,800 mi</span>
+                        </div>
+                        <div class="car-price">$389,900</div>
+                        <div class="car-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Elite Motors New York</span>
+                        </div>
+                        <div class="car-actions">
+                            <button class="btn-outline view-details" data-car="3">Details</button>
+                            <button class="btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 4 -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Porsche Taycan">
+                    </div>
+                    <div class="car-details">
+                        <h3>WV Golf 7 RS</h3>
+                        <div class="car-specs">
+                            <span>2023 Model</span>
+                            <span>1,500 mi</span>
+                        </div>
+                        <div class="car-price">$35,000</div>
+                        <div class="car-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Elite Motors Beverly Hills</span>
+                        </div>
+                        <div class="car-actions">
+                            <button class="btn-outline view-details" data-car="4">Details</button>
+                            <button class="btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 5 -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <img src="images.jpeg" alt="Range Rover">
+                    </div>
+                    <div class="car-details">
+                        <h3>Range Rover</h3>
+                        <div class="car-specs">
+                            <span>2023 Model</span>
+                            <span>4,200 mi</span>
+                        </div>
+                        <div class="car-price">$242,000</div>
+                        <div class="car-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Elite Motors Miami</span>
+                        </div>
+                        <div class="car-actions">
+                            <button class="btn-outline view-details" data-car="5">Details</button>
+                            <button class="btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 6 -->
+                <div class="car-card fade-in">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bentley Continental">
+                    </div>
+                    <div class="car-details">
+                        <h3>Mercedes-AMG GT</h3>
+                        <div class="car-specs">
+                            <span>2023 Model</span>
+                            <span>1,200 mi</span>
+                        </div>
+                        <div class="car-price">$545,000</div>
+                        <div class="car-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Elite Motors New York</span>
+                        </div>
+                        <div class="car-actions">
+                            <button class="btn-outline view-details" data-car="6">Details</button>
+                            <button class="btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>Hear what our valued clients have to say about their Elite Motors experience</p>
+            </div>
+            <div class="testimonial-slider">
+                <!-- Testimonial 1 -->
+                <div class="testimonial active">
+                    <p class="testimonial-text">"Elite Motors exceeded all my expectations. Their attention to detail and commitment to customer satisfaction is unmatched in the luxury automotive market. The Mercedes S-Class I purchased was in pristine condition, just as described."</p>
+                    <h4 class="testimonial-author">Michael Johnson</h4>
+                    <p class="testimonial-role">CEO, Tech Innovations Inc.</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial">
+                    <p class="testimonial-text">"From the moment I walked into Elite Motors, I knew I was in good hands. The staff's knowledge of high-end vehicles is impressive, and they helped me find the perfect Porsche Taycan that matched all my requirements."</p>
+                    <h4 class="testimonial-author">Sarah Williams</h4>
+                    <p class="testimonial-role">Partner, Williams & Associates</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial">
+                    <p class="testimonial-text">"The purchasing process at Elite Motors was seamless. They handled all the paperwork and even arranged for delivery of my Bentley to my home. I've purchased many luxury cars over the years, but this was by far the best experience."</p>
+                    <h4 class="testimonial-author">Robert Chen</h4>
+                    <p class="testimonial-role">Founder, Chen Holdings</p>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dealership Locations -->
+    <section id="locations" class="locations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Dealerships</h2>
+                <p>Visit one of our prestigious showrooms across the country</p>
+            </div>
+            <div class="location-cards">
+                <!-- Location 1 -->
+                <div class="location-card slide-up">
+                    <div class="location-image">
+                        <img src="Porsche-Centre-Preston-1024x576.png" alt="Beverly Hills Dealership">
+                    </div>
+                    <div class="location-details">
+                        <h3>Porsche Dealerships</h3>
+                        <div class="location-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>9440 Wilshire Blvd, Beverly Hills, CA 90212</span>
+                        </div>
+                        <div class="location-info">
+                            <i class="fas fa-phone"></i>
+                            <span>(310) 555-0100</span>
+                        </div>
+                        <div class="location-info">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 9AM - 7PM | Sun: 10AM - 5PM</span>
+                        </div>
+                        <button class="btn-outline" style="margin-top: 15px;">Get Directions</button>
+                    </div>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="location-card slide-up">
+                    <div class="location-image">
+                        <img src="9a9e9d6823cc38b6f3f19767c63e53df.jpg" alt="New York Dealership">
+                    </div>
+                    <div class="location-details">
+                        <h3>Corvette Dealerships</h3>
+                        <div class="location-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>555 Park Avenue, New York, NY 10022</span>
+                        </div>
+                        <div class="location-info">
+                            <i class="fas fa-phone"></i>
+                            <span>(212) 555-0200</span>
+                        </div>
+                        <div class="location-info">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 9AM - 7PM | Sun: 10AM - 5PM</span>
+                        </div>
+                        <button class="btn-outline" style="margin-top: 15px;">Get Directions</button>
+                    </div>
+                </div>
+
+                <!-- Location 3 -->
+                <div class="location-card slide-up">
+                    <div class="location-image">
+                        <img src="images (1).jpeg" alt="BMW Dealerships">
+                    </div>
+                    <div class="location-details">
+                        <h3>BMW Dealerships</h3>
+                        <div class="location-info">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>888 Brickell Ave, Miami, FL 33131</span>
+                        </div>
+                        <div class="location-info">
+                            <i class="fas fa-phone"></i>
+                            <span>(305) 555-0300</span>
+                        </div>
+                        <div class="location-info">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 9AM - 7PM | Sun: 10AM - 5PM</span>
+                        </div>
+                        <button class="btn-outline" style="margin-top: 15px;">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join Our Exclusive Community</h2>
+            <p>Subscribe to receive updates on new arrivals, special offers, and VIP events</p>
+            <form class="newsletter-form" action="https://script.google.com/macros/s/AKfycbxjrL6L8Kh25gWLJBPfkDBdSMWPufP_Q5ycKvggqfSa8HUmfDmy6m4dc-rB-aprlE8jag/exec">
+                <input type="email" placeholder="Enter your email address" required>
+                <a href="https://script.google.com/macros/s/AKfycbxjrL6L8Kh25gWLJBPfkDBdSMWPufP_Q5ycKvggqfSa8HUmfDmy6m4dc-rB-aprlE8jag/exec"><button type="submit" name="submit">Subscribe</button></a>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Elite Motors</h3>
+                    <p>For over 25 years, Elite Motors has been the premier destination for luxury automotive enthusiasts. Our commitment to excellence and customer satisfaction sets us apart in the industry.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#featured">Featured Vehicles</a></li>
+                        <li><a href="#inventory">Full Inventory</a></li>
+                        <li><a href="#locations">Dealership Locations</a></li>
+                        <li><a href="#testimonials">Client Testimonials</a></li>
+                        <li><a href="#">Financing Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Corporate Headquarters: 123 Luxury Lane, Beverly Hills, CA 90210</p>
+                    <p><i class="fas fa-phone"></i> (888) 555-ELITE</p>
+                    <p><i class="fas fa-envelope"></i> info@elitemotors.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Elite Motors. All Rights Reserved. Luxury Automotive Group.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Car Details Modal -->
+    <div id="carModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalCarTitle">Mercedes-Benz S-Class</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <img id="modalCarImage" src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Car Image" class="modal-car-image">
+                <div class="modal-car-info">
+                    <div class="modal-car-specs">
+                        <h4>Vehicle Specifications</h4>
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>3.0L V8 Turbo</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-bolt"></i>
+                                <span>600 HP</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-cogs"></i>
+                                <span>7-Speed Automatic</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>22 MPG City / 30 MPG Hwy</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-car"></i>
+                                <span>Sedan</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-palette"></i>
+                                <span>Obsidian Black</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-chair"></i>
+                                <span>Nappa Leather</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-road"></i>
+                                <span>5,000 Miles</span>
+                            </div>
+                        </div>
+                        <h4 style="margin-top: 30px;">Features</h4>
+                        <ul id="carFeatures" style="columns: 2; list-style-type: none; margin-top: 15px;">
+                            <li><i class="fas fa-check" style="color: #d4af37; margin-right: 8px;"></i> Premium Package</li>
+                            <li><i class="fas fa-check" style="color: #d4af37; margin-right: 8px;"></i> Driver Assistance Package</li>
+                            <li><i class="fas fa-check" style="color: #d4af37; margin-right: 8px;"></i> Night View Assist</li>
+                            <li><i class="fas fa-check" style="color: #d4af37; margin-right: 8px;"></i> Air Balance System</li>
+                            <li><i class="fas fa-check" style="color: #d4af37; margin-right: 8px;"></i> Burmester 3D Sound System</li>
+                            <li><i class="fas fa-check" style="color: #d4af37; margin-right: 8px;"></i> Heated/Ventilated Seats</li>
+                            <li><i class="fas fa-check" style="color: #d4af37; margin-right: 8px;"></i> Panoramic Sunroof</li>
+                            <li><i class="fas fa-check" style="color: #d4af37; margin-right: 8px;"></i> 360° Camera</li>
+                        </ul>
+                    </div>
+                    <div class="order-form">
+                        <h4>Request More Information</h4>
+                        <form action="https://script.google.com/macros/s/AKfycbxjrL6L8Kh25gWLJBPfkDBdSMWPufP_Q5ycKvggqfSa8HUmfDmy6m4dc-rB-aprlE8jag/exec" target="_blank">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="interest">Interest Level</label>
+                                <select id="interest" name="interest">
+                                    <option value="ready">Ready to Purchase</option>
+                                    <option value="considering">Considering Options</option>
+                                    <option value="researching">Just Researching</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn">Submit Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-outline close-modal-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script>
+        // Car Data
+        const cars = {
+            1: {
+                title: "Mercedes-Benz S-Class",
+                image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                price: "$115,900",
+                year: "2023",
+                miles: "5,000",
+                engine: "3.0L V6 Turbo",
+                horsepower: "429 HP",
+                transmission: "9-Speed Automatic",
+                mpg: "22 MPG City / 30 MPG Hwy",
+                color: "Obsidian Black",
+                interior: "Nappa Leather",
+                features: [
+                    "Premium Package",
+                    "Driver Assistance Package",
+                    "Night View Assist",
+                    "Air Balance System",
+                    "Burmester 3D Sound System",
+                    "Heated/Ventilated Seats",
+                    "Panoramic Sunroof",
+                    "360° Camera"
+                ],
+                location: "Elite Motors Beverly Hills"
+            },
+            2: {
+                title: "BMW 7 Series",
+                image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                price: "$98,500",
+                year: "2023",
+                miles: "3,200",
+                engine: "3.0L TwinPower Turbo I6",
+                horsepower: "335 HP",
+                transmission: "8-Speed Automatic",
+                mpg: "21 MPG City / 29 MPG Hwy",
+                color: "Mineral White Metallic",
+                interior: "Merino Leather",
+                features: [
+                    "Executive Package",
+                    "Driving Assistance Pro",
+                    "Bowers & Wilkins Diamond Sound",
+                    "Sky Lounge Panoramic Roof",
+                    "Gesture Control",
+                    "Rear Executive Lounge",
+                    "Laserlight Headlights",
+                    "Parking Assistant Plus"
+                ],
+                location: "Elite Motors Miami"
+            },
+            3: {
+                title: "Audi A8 L",
+                image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                price: "$89,900",
+                year: "2023",
+                miles: "2,800",
+                engine: "3.0L TFSI V6",
+                horsepower: "335 HP",
+                transmission: "8-Speed Tiptronic",
+                mpg: "18 MPG City / 27 MPG Hwy",
+                color: "Florett Silver Metallic",
+                interior: "Valcona Leather",
+                features: [
+                    "Prestige Package",
+                    "Driver Assistance Package",
+                    "Bang & Olufsen 3D Sound",
+                    "Executive Rear Seat Package",
+                    "Audi Virtual Cockpit",
+                    "Night Vision Assistant",
+                    "Adaptive Air Suspension",
+                    "HD Matrix LED Headlights"
+                ],
+                location: "Elite Motors New York"
+            },
+            4: {
+                title: "Porsche Taycan Turbo S",
+                image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                price: "$185,000",
+                year: "2023",
+                miles: "1,500",
+                engine: "Dual Electric Motors",
+                horsepower: "750 HP",
+                transmission: "2-Speed Automatic",
+                mpg: "68 MPGe Combined",
+                color: "Mamba Green Metallic",
+                interior: "Race-Tex and Leather",
+                features: [
+                    "Performance Battery Plus",
+                    "Porsche Dynamic Chassis Control",
+                    "Porsche Ceramic Composite Brakes",
+                    "Porsche Torque Vectoring Plus",
+                    "Adaptive Cruise Control",
+                    "Burmester 3D Sound System",
+                    "Porsche Electric Sport Sound",
+                    "Porsche InnoDrive"
+                ],
+                location: "Elite Motors Beverly Hills"
+            },
+            5: {
+                title: "Range Rover Autobiography",
+                image: "images.jpeg",
+                price: "$142,000",
+                year: "2023",
+                miles: "4,200",
+                engine: "4.4L Twin-Turbo V8",
+                horsepower: "523 HP",
+                transmission: "8-Speed Automatic",
+                mpg: "16 MPG City / 21 MPG Hwy",
+                color: "Santorini Black Metallic",
+                interior: "Semi-Aniline Leather",
+                features: [
+                    "Autobiography Ultimate Pack",
+                    "Terrain Response 2",
+                    "Executive Class Rear Seats",
+                    "Meridian Signature Sound",
+                    "Adaptive Dynamics",
+                    "Head-Up Display",
+                    "ClearSight Ground View",
+                    "Activity Key"
+                ],
+                location: "Elite Motors Miami"
+            },
+            6: {
+                title: "Bentley Continental GT",
+                image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                price: "$245,000",
+                year: "2023",
+                miles: "1,200",
+                engine: "6.0L Twin-Turbo W12",
+                horsepower: "626 HP",
+                transmission: "8-Speed Dual-Clutch",
+                mpg: "12 MPG City / 20 MPG Hwy",
+                color: "Dragon Red II",
+                interior: "Beluga Hide",
+                features: [
+                    "Mulliner Driving Specification",
+                    "Touring Specification",
+                    "Naim for Bentley Audio",
+                    "Bentley Rotating Display",
+                    "Night Vision with Pedestrian Warning",
+                    "Adaptive Cruise Control",
+                    "City Specification",
+                ],
+                location: "Elite Motors New York"
+            }
+        };
+
+        // DOM Elements
+        const modal = document.getElementById('carModal');
+        const modalTitle = document.getElementById('modalCarTitle');
+        const modalImage = document.getElementById('modalCarImage');
+        const carFeaturesList = document.getElementById('carFeatures');
+        const viewDetailsButtons = document.querySelectorAll('.view-details');
+        const closeModalButtons = document.querySelectorAll('.close-modal, .close-modal-btn');
+        const testimonialSlides = document.querySelectorAll('.testimonial');
+        const sliderDots = document.querySelectorAll('.slider-dot');
+        const inquiryForm = document.getElementById('inquiryForm');
+
+        // View Car Details
+        viewDetailsButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const carId = button.getAttribute('data-car');
+                const car = cars[carId];
+                
+                modalTitle.textContent = car.title;
+                modalImage.src = car.image;
+                
+                // Clear previous features
+                carFeaturesList.innerHTML = '';
+                
+                // Add new features
+                car.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<i class="fas fa-check" style="color: #d4af37; margin-right: 8px;"></i> ${feature}`;
+                    carFeaturesList.appendChild(li);
+                });
+                
+                // Show modal
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close Modal
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Testimonial Slider
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            sliderDots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonialSlides[index].classList.add('active');
+            sliderDots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        sliderDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % testimonialSlides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // Form Submission
+        inquiryForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const interest = document.getElementById('interest').value;
+            const message = document.getElementById('message').value;
+            const car = modalTitle.textContent;
+            
+            // In a real application, you would send this data to a server
+            console.log('Form submitted:', {
+                name,
+                email,
+                phone,
+                interest,
+                message,
+                car
+            });
+            
+            // Show success message
+            alert(`Thank you, ${name}! Your inquiry about the ${car} has been submitted. We'll contact you shortly.`);
+            
+            // Reset form and close modal
+            inquiryForm.reset();
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in, .slide-up');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial state for animated elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        });
+
+        document.querySelectorAll('.slide-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        });
+
+        // Run once on page load
+        animateOnScroll();
+
+        // Run on scroll
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Order Now buttons
+        document.querySelectorAll('.car-actions .btn:not(.btn-outline)').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const carCard = button.closest('.car-card');
+                const carTitle = carCard.querySelector('h3').textContent;
+                
+                alert(`Thank you for your interest in the ${carTitle}. A sales representative will contact you shortly to discuss your order.`);
+            });
+        });
+    </script>
+</body>
+</html>
